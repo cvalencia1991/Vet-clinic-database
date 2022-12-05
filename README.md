@@ -45,19 +45,6 @@ in this project I Build a relational database based on a real-life example.
 ### Tech Stack <a name="tech-stack"></a>
 
 
-<details>
-  <!-- <summary>Client</summary>
-  <ul>
-    <li><a href="https://reactjs.org/">postgresql</a></li>
-  </ul>
-</details> -->
-
-<!-- <details>
-  <summary>Server</summary>
-  <ul>
-    <li><a href="https://expressjs.com/">postgresql.js</a></li>
-  </ul>
-</details> -->
 
 <details>
 <summary>Database</summary>
