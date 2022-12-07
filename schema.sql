@@ -6,6 +6,14 @@ CREATE TABLE animals (
     neutered BOOLEAN,
     weight_kg DECIMAL
 );
-
+-- ALTER TABLE ANIMALS
 ALTER TABLE animals
 ADD column species varchar(100);
+
+--Creating Tables
+CREATE TABLE owners(
+    id INTEGER,
+    full_name VARCHAR(100),
+	age INTEGER,
+    PRIMARY KEY(id)
+);

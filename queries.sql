@@ -65,7 +65,6 @@ ROLLBACK;
 -- Inside a transaction:
 BEGIN;
 -- Delete all animals born after Jan 1st, 2022.
-
 DELETE FROM animals
 WHERE date_of_birth > timestamp '2022-01-01 00:00:00';
 -- Create a savepoint for the transaction.
@@ -73,16 +72,13 @@ SAVEPOINT point1;
 -- Update all animals' weight to be their weight multiplied by -1.
 UPDATE animals
 SET weight_kg = weight_kg*-1;
-
 -- Rollback to the savepoint
 ROLLBACK to savepoint point1;
-
 -- Update all animals' weights that are negative to be their weight multiplied by -1.
 UPDATE animals
 SET weight_kg = weight_kg *-1;
 -- Commit transaction
 COMMIT;
-
 
 -- How many animals are there?
 SELECT COUNT(*) FROM animals;
@@ -95,4 +91,5 @@ SELECT COUNT(neutered) FROM animals GROUP BY neutered;
 -- What is the minimum and maximum weight of each type of animal?
 SELECT  species,max(weight_kg),min(weight_kg) FROM animals GROUP BY species;
 -- What is the average number of escape attempts per animal type of those born between 1990 and 2000?
-SELECT name, AVG(escape_attempts) FROM animals WHERE  date_of_birth> '1990-01-01 00:00:00' AND date_of_birth < '2000-12-31 12:00:00' GROUP BY name;
+SELECT name, AVG(escape_attempts) FROM animals
+WHERE  date_of_birth> '1990-01-01 00:00:00' AND date_of_birth < '2000-12-31 12:00:00' GROUP BY name;
