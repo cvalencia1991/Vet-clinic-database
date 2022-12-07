@@ -36,15 +36,13 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [your_project_name] <a name="about-project"></a>
+# 📖 Vet Clinic dataBase <a name="about-project"></a>
 
-in this project I Build a relational database based on a real-life example.
+In this project I using the PostGerSQL and Data in a LocalHost 
 
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
-
-
 
 <details>
 <summary>Database</summary>
