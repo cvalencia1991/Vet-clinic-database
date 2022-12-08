@@ -39,3 +39,14 @@ CREATE TABLE vets (
     date_of_graduation DATE,
     PRIMARY KEY(id)
 )
+
+--Create Specializations Table
+
+CREATE TABLE specializations(
+id INTEGER,
+Vet_id INTEGER,
+Spcs_id INTEGER,
+FOREIGN KEY (vet_id) REFERENCES vets (id),
+FOREIGN KEY (Spcs_id) REFERENCES species (id),
+PRIMARY KEY (vet_id,Spcs_id)
+)
