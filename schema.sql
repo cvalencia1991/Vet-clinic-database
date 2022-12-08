@@ -30,3 +30,12 @@ ALTER TABLE animals ADD COLUMN species_id INTEGER;
 ALTER TABLE animals ADD CONSTRAINT fk_species FOREIGN KEY(species_id) REFERENCES species(id);
 ALTER TABLE animals ADD COLUMN owner_id INTEGER;
 ALTER TABLE animals ADD CONSTRAINT fk_owners FOREIGN KEY(owner_id) REFERENCES owners(id);
+
+--Ceating Vet Table
+CREATE TABLE vets (
+    id INTEGER,
+    name VARCHAR(100),
+    age INTEGER,
+    date_of_graduation DATE,
+    PRIMARY KEY(id)
+)
