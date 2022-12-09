@@ -115,6 +115,57 @@ UPDATE animals
 SET owner_id = (SELECT id FROM owners WHERE full_name = 'Bob')
 WHERE name IN ('Devimon','Plantmon');
 
+--Add Vets information
+
+INSERT INTO animals(ID,name,
+date_of_birth,escape_attempts,
+neutered,weight_kg) VALUES (9,
+'Agumon', '2020-02-03',0,true,10.23);
+
+INSERT INTO animals(ID,name,
+date_of_birth,escape_attempts,
+neutered,weight_kg) VALUES (10,
+'Devimon', '2017-05-12',5,true,11);
+
+--Add specializations Values
+
+INSERT INTO specializations(id,vet_id,spcs_id)
+VALUES (1,1,1),
+        (2,2,1),
+        (3,4,2);
+
+
+INSERT INTO vets(id,name,age,date_of_graduation)
+VALUES (1,'William Tatcher',45,'2000-04-23'),
+		(2,'Maisy Smith',26,'2019-06-17'),
+		(3,'Stephanie Mendez',64,'1981-05-04'),
+		(4,'Jack Harkness',38,'2008-08-06');
+
+--Add Visits Table
+
+INSERT INTO visits(id,
+animals_id,vets_id,visit_date)
+VALUES (1,9,1,'2020-05-24'),
+       (2,9,3,'2020-07-22'),
+       (3,8,4,'2021-02-02'),
+       (4,7,2,'2020-06-05'),
+       (5,7,2,'2020-03-08'),
+       (6,7,2,'2020-05-14'),
+       (7,10,3,'2021-05-04'),
+       (8,1,4,'2021-02-24'),
+       (9,2,2,'2019-12-21'),
+       (10,2,1,'2020-08-10'),
+       (11,2,2,'2021-04-07'),
+       (12,3,3,'2019-09-29'),
+       (13,4,4,'2020-10-03'),
+       (14,4,4,'2020-11-04'),
+       (15,5,2,'2019-06-24'),
+       (16,5,2,'2019-05-15'),
+       (17,5,2,'2020-02-27'),
+       (18,5,2,'2020-03-08'),
+       (19,5,3,'2020-05-24'),
+       (20,5,1,'2021-06-11');
+
 
 
 
