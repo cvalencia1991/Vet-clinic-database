@@ -132,7 +132,8 @@ neutered,weight_kg) VALUES (10,
 INSERT INTO specializations(id,vet_id,spcs_id)
 VALUES (1,1,1),
         (2,2,1),
-        (3,4,2);
+        (3,4,2),
+        (4,3,2);
 
 
 INSERT INTO vets(id,name,age,date_of_graduation)
