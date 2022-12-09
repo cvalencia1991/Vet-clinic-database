@@ -40,6 +40,20 @@ CREATE TABLE vets (
     PRIMARY KEY(id)
 )
 
+--Create Table Visits
+
+CREATE TABLE visits (
+id INTEGER,
+animals_id INTEGER,
+vets_id INTEGER,
+visit_date DATE,
+	FOREIGN KEY (vets_id) REFERENCES vets(id),
+	FOREIGN KEY (animals_id) REFERENCES animals(id),
+	PRIMARY KEY (vets_id,animals_id,visit_date)
+
+);
+
+
 --Create Specializations Table
 
 CREATE TABLE specializations(
@@ -49,4 +63,4 @@ Spcs_id INTEGER,
 FOREIGN KEY (vet_id) REFERENCES vets (id),
 FOREIGN KEY (Spcs_id) REFERENCES species (id),
 PRIMARY KEY (vet_id,Spcs_id)
-)
+);
