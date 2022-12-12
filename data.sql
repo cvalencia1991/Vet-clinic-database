@@ -167,8 +167,22 @@ VALUES (1,9,1,'2020-05-24'),
        (19,5,3,'2020-05-24'),
        (20,5,1,'2021-06-11');
 
+-- database performance audit
 
+DROP TABLE visits;
 
+CREATE TABLE visits(
+  id INT GENERATED ALWAYS AS IDENTITY,
+  animal_id INT REFERENCES animals(id),
+  vet_id INT REFERENCES vets(id),
+  date_of_visit DATE,
+  PRIMARY KEY(id)
+);
+
+INSERT INTO visits (animal_id, vet_id, date_of_visit)
+SELECT * FROM (SELECT id FROM animals) animal_ids,
+(SELECT id FROM vets) vets_ids,
+generate_series('1980-01-01'::timestamp, '2021-01-01', '4 hours') visit_timestamp;
 
 
 
