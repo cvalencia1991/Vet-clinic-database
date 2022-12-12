@@ -167,10 +167,24 @@ VALUES (1,9,1,'2020-05-24'),
        (19,5,3,'2020-05-24'),
        (20,5,1,'2021-06-11');
 
+-- database performance audit
+
+
+--iterate many ass youu get X>1000
+INSERT INTO visits (animal_id, vet_id, date_of_visit)
+SELECT * FROM (SELECT id FROM animals) animal_ids,
+(SELECT id FROM vets) vets_ids,
+generate_series('1980-01-01'::timestamp, '2021-01-01', '4 hours') visit_timestamp;
+
+DROP TABLE owners CASCADE;
+
+ALTER TABLE owners ADD COLUMN email VARCHAR(120);
 
 
 
 
-
+insert into owners (full_name, email) 
+select 'Owner ' || generate_series(1,2500000), 
+'owner_' || generate_series(1,2500000) || '@mail.com';
 
 

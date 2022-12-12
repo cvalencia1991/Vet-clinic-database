@@ -64,3 +64,29 @@ FOREIGN KEY (vet_id) REFERENCES vets (id),
 FOREIGN KEY (Spcs_id) REFERENCES species (id),
 PRIMARY KEY (vet_id,Spcs_id)
 );
+
+--database performance audit
+
+DROP TABLE visits;
+
+CREATE TABLE visits(
+  id INT GENERATED ALWAYS AS IDENTITY,
+  animal_id INT REFERENCES animals(id),
+  vet_id INT REFERENCES vets(id),
+  date_of_visit DATE,
+  PRIMARY KEY(id)
+);
+
+
+CREATE INDEX visits_people ON visits(id ASC);
+
+DROP TABLE owners;
+
+CREATE TABLE owners(
+  id INT GENERATED ALWAYS AS IDENTITY,
+  full_name VARCHAR(20),
+  age INT,
+  PRIMARY KEY(id)
+);
+
+CREATE INDEX owners_users ON owners(id ASC);
