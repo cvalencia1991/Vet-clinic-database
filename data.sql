@@ -183,6 +183,8 @@ ALTER TABLE owners ADD COLUMN email VARCHAR(120);
 
 
 
-
+insert into owners (full_name, email) 
+select 'Owner ' || generate_series(1,2500000), 
+'owner_' || generate_series(1,2500000) || '@mail.com';
 
 
