@@ -234,3 +234,16 @@ LEFT JOIN specializations ON species_id = specializations.id
 LEFT JOIN species ON animals.species_id= species.id
 WHERE B.name = 'Maisy Smith'
 GROUP BY B.name,species.name;
+
+--Add query performance audit
+
+EXPLAIN ANALYZE SELECT COUNT(*) FROM visits where animal_id = 4;
+EXPLAIN ANALYZE SELECT * FROM visits where vet_id = 2;
+EXPLAIN ANALYZE SELECT * FROM owners where email = 'owner_18327@mail.com';
+
+--Using Indexing
+
+EXPLAIN ANALYZE select COUNT(animal_id) from visits where animal_id=4;
+EXPLAIN ANALYZE select vet_id from visits where vet_id = 2;
+EXPLAIN ANALYZE SELECT * FROM owners where email = 'owner_18327@mail.com';
+
